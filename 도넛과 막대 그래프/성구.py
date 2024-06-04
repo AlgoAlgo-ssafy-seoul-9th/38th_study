@@ -20,7 +20,7 @@ def solution(edges):
     
                 v.add(node)
                 stack.append(node)
-        # 모두 돌고 나오면 
+        # 모두 돌고 나오면 막대
         return 2
         
     
