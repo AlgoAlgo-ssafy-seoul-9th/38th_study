@@ -1,6 +1,6 @@
-# Nst_study
+# 38st_study
 
-알고리즘 스터디 N주차
+알고리즘 스터디 38주차
 
 <br/>
 
@@ -99,7 +99,7 @@
 
 <br/>
 
-## [문제4](문제주소)
+## [도넛과 막대 그래프](https://school.programmers.co.kr/learn/courses/30/lessons/258711)
 
 ### [민웅](./문제4/민웅.py)
 
