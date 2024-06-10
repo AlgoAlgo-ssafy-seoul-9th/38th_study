@@ -22,6 +22,31 @@
 ### [상미](./기타줄/상미.py)
 
 ```py
+import sys
+input = sys.stdin.readline
+
+N, M = map(int, input().split())
+sixes = []
+ones = []
+for _ in range(M):
+    six, one = map(int, input().split())
+    sixes.append(six)
+    ones.append(one)
+    sixes.append(one*6)
+sixes.sort()
+ones.sort()
+tmp = 0
+while N > 0:
+    if N >= 6:
+        N -= 6
+        tmp += sixes[0]
+    else:
+        if ones[0]*N < sixes[0]:
+            tmp += ones[0]*N
+        else:
+            tmp += sixes[0]
+        N = 0
+print(tmp)
 
 ```
 
@@ -60,12 +85,13 @@ else:
         print(cost+min_one*N)
     else:
         print(cost+min_six)
-            
+
 ```
 
 ### [영준](./기타줄/영준.py)
 
 ```py
+
 ```
 
 <br/>
@@ -75,11 +101,13 @@ else:
 ### [민웅](./귀도%20반%20로썸은%20크리스마스날%20심심하다고%20파이썬을%20만들었다/민웅.py)
 
 ```py
+
 ```
 
 ### [상미](./귀도%20반%20로썸은%20크리스마스날%20심심하다고%20파이썬을%20만들었다/상미.py)
 
 ```py
+
 ```
 
 ### [성구](./귀도%20반%20로썸은%20크리스마스날%20심심하다고%20파이썬을%20만들었다/성구.py)
@@ -91,6 +119,7 @@ else:
 ### [영준](./귀도%20반%20로썸은%20크리스마스날%20심심하다고%20파이썬을%20만들었다/영준.py)
 
 ```py
+
 ```
 
 <br/>
@@ -98,8 +127,11 @@ else:
 ## [팰린드롬 분할](https://www.acmicpc.net/problem/1509)
 
 ### [민웅](./팰린드롬%20분할/민웅.py)
+
 ₩
+
 ```py
+
 ```
 
 ### [상미](./팰린드롬%20분할/상미.py)
@@ -111,6 +143,7 @@ else:
 ### [성구](./팰린드롬%20분할/성구.py)
 
 ```py
+
 ```
 
 ### [영준](./팰린드롬%20분할/영준.py)
@@ -137,6 +170,7 @@ else:
 ### [민웅](./도넛과%20막대%20그래프/민웅.py)
 
 ```py
+
 ```
 
 ### [상미](./도넛과%20막대%20그래프/상미.py)
@@ -152,55 +186,55 @@ from collections import defaultdict
 
 def solution(edges):
     answer = [0] * 4
-    
+
     def dfs(start):
         stack = [(start)]
         v = set()
         while stack:
             spot = stack.pop()
-            
+
             # 중간 출력 간선이 2개 이상이면 8자
             if len(graph[spot]) > 1:
                 return 3
-            
+
             for node in graph[spot]:
                 # 처음으로 돌아오면 도넛
                 if node == start:
                     return 1
-    
+
                 v.add(node)
                 stack.append(node)
         # 모두 돌고 나오면 막대
         return 2
-        
-    
+
+
     # 그래프 세팅
-    graph = defaultdict(list)    
+    graph = defaultdict(list)
     for a, b in edges:
         graph[a].append(b)
-    
+
     visited = set()
     nodes = set()
-    
+
     # 입력 간선이 없는 노드를 찾기 위한 set 연산
     for node, posts in graph.items():
         visited.update(posts)
         nodes.add(node)
-    
+
     addi_node = tuple(nodes - visited)
-    
+
     # 만약 여러 개라면 출력 간선이 2개 이상이 노드
     for n in addi_node:
         if len(graph[n]) > 1:
             target = n
-    
+
     answer[0] = target
-    
+
     # 필터링
     for start in graph[target]:
         answer[dfs(start)] += 1
-        
-    
+
+
     return answer
 ```
 
@@ -209,8 +243,6 @@ def solution(edges):
 ```py
 
 ```
-
- 
 
 </details>
 
